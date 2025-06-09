@@ -1,0 +1,18 @@
+package linearSearchAlgorithm.stringsearch;
+
+public class CountConsonants {
+    public static void main(String[] args) {
+        String s="AeiousHgsavvv";
+        System.out.println(countConsonants(s));
+    }
+
+    static int countConsonants(String s){
+        int count= 0;
+        for (char c: s.toCharArray()){
+            if (Character.isLetter(c) && "aeiousAEIOUS".indexOf(c) ==-1)
+                count++;
+        }
+        return count;
+
+    }
+}

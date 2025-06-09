@@ -1,0 +1,44 @@
+package binarySearchAlgorithm.practise;
+
+public class TotalOccurrenceOfNumber {
+    public static void main(String[] args) {
+        int[] ascendingArr = {1, 2, 2, 2, 3, 4, 5};
+
+
+        int target1 = 2;
+
+
+        System.out.println("Ascending array count: " + countOccurrences(ascendingArr, target1));
+       
+    }
+
+    public static int countOccurrences(int[] arr, int target) {
+        return lastIndex(arr, target) - firstIndex(arr, target) + 1;
+    }
+
+    private static int firstIndex(int[] arr, int target) {
+        int start = 0, end = arr.length - 1, res = -1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (arr[mid] == target) {
+                res = mid;
+                end = mid - 1;
+            } else if (arr[mid] < target) start = mid + 1;
+            else end = mid - 1;
+        }
+        return res;
+    }
+
+    private static int lastIndex(int[] arr, int target) {
+        int start = 0, end = arr.length - 1, res = -1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (arr[mid] == target) {
+                res = mid;
+                start = mid + 1;
+            } else if (arr[mid] < target) start = mid + 1;
+            else end = mid - 1;
+        }
+        return res;
+    }
+}

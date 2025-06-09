@@ -1,0 +1,17 @@
+package linearSearchAlgorithm.stringsearch;
+
+public class CountVowels {
+    public static void main(String[] args) {
+        String a="Absciou";
+        System.out.println(countVowel(a));
+    }
+
+    static int countVowel(String s){
+        int count=0;
+        for (char c : s.toCharArray()){
+            if ("aeiouAEIOU".indexOf(c)!=-1)
+                count++;
+        }
+        return count;
+    }
+}

@@ -1,0 +1,24 @@
+package linearSearchAlgorithm.stringsearch;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class FindAllIndex {
+    public static void main(String[] args) {
+        //index->> 0123456
+        String s ="Harshal";
+        char target='h';
+        System.out.println(findIndexes(s.toLowerCase(),target));
+    }
+
+    static List<Integer> findIndexes(String s,char target){
+        List<Integer> indexes= new ArrayList<>();
+        for (int i=0; i<  s.length();i++){
+            if (s.charAt(i) == target){
+                indexes.add(i);
+            }
+        }
+        return indexes;
+    }
+
+}

@@ -1,0 +1,25 @@
+package linearSearchAlgorithm.stringsearch;
+
+public class CharacterMaxFreq {
+    public static void main(String[] args) {
+        String s ="harsssshal";
+
+        System.out.println(maxFreq(s));
+    }
+
+    static char  maxFreq(String s){
+        int[] freq =new int[256];
+        for (char c:s.toCharArray())
+            freq[c]++;
+
+        int max =-1;
+        char result ='\0';
+        for (char c:s.toCharArray()){
+            if (freq[c]>max){
+                max=freq[c];
+                result= c;
+            }
+        }
+        return result;
+    }
+}

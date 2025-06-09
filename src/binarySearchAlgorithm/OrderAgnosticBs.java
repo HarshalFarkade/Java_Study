@@ -1,0 +1,46 @@
+package binarySearchAlgorithm;
+
+public class OrderAgnosticBs {
+    public static void main(String[] args) {
+//        int[] arr ={1,2,3,4,5,6,7,8,9,10,22,25};
+        int[] arr ={10,9,8,7,6,5,4,3,2,1};
+        int target = 9;
+
+        int result  =orderAgnosticsSearch(arr,target);
+        System.out.println(result);
+
+
+    }
+
+    static int orderAgnosticsSearch(int [] arr,int target){
+        int s = 0;
+        int e = arr.length-1;
+
+//        find the arr is asc or desc
+        boolean isAsc = arr[s] < arr[e];
+
+        while (s<= e){
+            int mid =s+(e-s)/2;
+            if (target == arr[mid]){
+                return mid;
+            }
+
+            if (isAsc){
+                if (target< arr[mid]){
+                    e =mid-1;
+                }else {
+                    s=mid+1;
+                }
+            }else {
+                if (target>arr[mid]){
+                    e=mid-1;
+                }else {
+                    s=mid+1;
+                }
+            }
+
+        }
+        return -1;
+
+    }
+}

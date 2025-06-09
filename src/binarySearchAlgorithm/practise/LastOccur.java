@@ -1,0 +1,42 @@
+package binarySearchAlgorithm.practise;
+
+public class LastOccur {
+
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4,4,567,8};
+        System.out.println(lastOcc(arr,4));
+
+    }
+
+    static int lastOcc(int[] arr, int target){
+        int st=0;
+        int result=-1;
+        int ed=arr.length-1;
+
+        boolean isAsc=arr[st]< arr[ed];
+
+        while(st <= ed){
+            int mid = st+(ed-st)/2;
+
+            if (arr[mid] == target){
+                result=mid;
+                // search right for last occureance
+                st=mid+1;
+            }else  if (isAsc){
+                if (arr[mid]<target){
+                    st=mid+1;
+                }else {
+                    ed=mid-1;
+                }
+            }else{
+                if (arr[mid] > target){
+                    st=mid+1;
+                }else {
+                    ed=mid-1;
+                }
+            }
+
+        }
+        return result;
+    }
+}

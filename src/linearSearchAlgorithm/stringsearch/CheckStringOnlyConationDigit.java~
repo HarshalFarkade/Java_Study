@@ -1,0 +1,4 @@
+package linearSearchAlgorithm.stringsearch;
+
+public class CheckStringOnlyConationDigit {
+}

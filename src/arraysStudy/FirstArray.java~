@@ -1,0 +1,16 @@
+package arraysStudy;
+
+public class FirstArray {
+    public static void main(String[] args) {
+        int[] arr1 = {1,2,3,4};
+
+        String[] arr2= {"har","abc","vru"};
+
+        for (int i:arr1){
+            System.out.println(i);
+        }
+
+
+        
+    }
+}
